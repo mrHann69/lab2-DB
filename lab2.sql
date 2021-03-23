@@ -1,30 +1,30 @@
 IF EXIST
 
 --PUNTO 1
-CREATE TABLE X (
-	B varchar(2),
-	C varchar(2)
+CREATE TABLE XX (
+	BB varchar(2),
+	CC varchar(2)
 );
-CREATE TABLE Y (
-	A varchar(2),
-	B varchar(2)
+CREATE TABLE YY (
+	AA varchar(2),
+	BB varchar(2)
 );
-CREATE TABLE Z (
-	A varchar(2),
-	C varchar(2)
+CREATE TABLE ZZ (
+	AA varchar(2),
+	CC varchar(2)
 );
-INSERT INTO X VALUES
+INSERT INTO XX VALUES
 	('b1', 'c1'),
 	('b2', 'c2'),
   	('b2', 'c1'),
-  	('b1', 'c3'),
+  	('b1', 'a3'),
   	('b1', 'c5');
-INSERT INTO Y VALUES
+INSERT INTO YY VALUES
 	('a1', 'b1'),
   	('a1', 'b3'),
   	('a1', 'b4'),
   	('a3', 'b1');
-INSERT INTO Z VALUES
+INSERT INTO ZZ VALUES
 	('a1', 'c2'),
   	('a2', 'c2'),
   	('a2', 'c1'),
@@ -32,16 +32,30 @@ INSERT INTO Z VALUES
 
 --CONSULTAS
 --X interseccion Y
-SELECT * FROM X
+SELECT * FROM XX
 INTERSECT
-SELECT * FROM Y;
+SELECT * FROM YY;
+
 --X JOIN Z
-SELECT * FROM X
-INNER JOIN Z ON X.C=Z.C;
+SELECT * FROM XX
+INNER JOIN ZZ ON XX.CC=ZZ.CC;
+
 --X UNION Y
-SELECT * FROM X
-UNION Y;
+SELECT * FROM XX
+UNION
+SELECT * FROM YY;
+
 --Y PRODUCTO Z
---SELECCION (A - C) de X PRODUCTO Y
+SELECT * FROM YY,ZZ;
+
+--SELECCION (AA = CC) de XX PRODUCTO Z
+SELECT * FROM XX,ZZ WHERE AA = XX.CC;
+
 --PROYECCION de (X.C,Y.A) de (SELECCION ((X.B)-(Y.B))
+SELECT XX.CC, YY.AA FROM XX,YY WHERE XX.BB = YY.BB;
+
 --PROYECCION de B(X) MENOS PROYECCION de B(Y)
+SELECT BB FROM XX
+EXCEPT
+SELECT BB FROM YY;
+
