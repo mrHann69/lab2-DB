@@ -1,4 +1,3 @@
-IF EXIST
 
 --PUNTO 1
 CREATE TABLE XX (
@@ -16,19 +15,19 @@ CREATE TABLE ZZ (
 INSERT INTO XX VALUES
 	('b1', 'c1'),
 	('b2', 'c2'),
-  	('b2', 'c1'),
-  	('b1', 'a3'),
-  	('b1', 'c5');
+  ('b2', 'c1'),
+  ('b1', 'a3'),
+  ('b1', 'c5');
 INSERT INTO YY VALUES
 	('a1', 'b1'),
-  	('a1', 'b3'),
-  	('a1', 'b4'),
-  	('a3', 'b1');
+  ('a1', 'b3'),
+  ('a1', 'b4'),
+  ('a3', 'b1');
 INSERT INTO ZZ VALUES
 	('a1', 'c2'),
-  	('a2', 'c2'),
-  	('a2', 'c1'),
-  	('a3', 'b3');
+	('a2', 'c2'),
+	('a2', 'c1'),
+  ('a3', 'b3');
 
 --CONSULTAS
 --X interseccion Y
@@ -58,4 +57,3 @@ SELECT XX.CC, YY.AA FROM XX,YY WHERE XX.BB = YY.BB;
 SELECT BB FROM XX
 EXCEPT
 SELECT BB FROM YY;
-
