@@ -109,6 +109,19 @@ values ('2all04', 'Juan Esteban Mena', '280 Sumner St Stoughton', '3013590421', 
        ('nUN852', 'Dilip Nagendra Ahmad', '276 Mechanic St Southbridge', '774-402-8189', 'nagemad10@gmail.es', 'Geografia', 'H99NIR'),
        ('L0lq4', 'Alexey Raisa Shwetz', '278 Tremont St Carver', '508-866-4427', 'alexeytz@gmail.com', 'Neuropsicoloía Clínica', 'Y44YDX'),
        ('55opF', 'Anika Berthold Gotti', '277 Wallingford Ave Athol', '978-249-3056', 'Berthold@gmail.com.co', 'Derecho Procesal Penal', 'ZE62MS');
+       
+update facultad set profesor_id = '2all04' where codigo_facultad = 'A1003E';
+update facultad set profesor_id = 'Uq980' where codigo_facultad = 'A100BI';
+update facultad set profesor_id = 'sMM02E' where codigo_facultad = 'E3017G';
+update facultad set profesor_id = 'E21So7' where codigo_facultad = 'E5N991';
+update facultad set profesor_id = '377H1l' where codigo_facultad = 'A66M02';
+update facultad set profesor_id = '701Jj' where codigo_facultad = 'AB0243';
+update facultad set profesor_id = '094RX' where codigo_facultad = 'M33I1A';
+update facultad set profesor_id = '44Fn6l' where codigo_facultad = 'NL10R0';
+update facultad set profesor_id = 'Wwa91' where codigo_facultad = 'EU4501';
+update facultad set profesor_id = 'nUN852' where codigo_facultad = 'H99NIR';
+update facultad set profesor_id = 'L0lq4' where codigo_facultad = 'Y44YDX';
+update facultad set profesor_id = '55opF' where codigo_facultad = 'ZE62MS';
 
 -- Primary key of facultad
 alter table facultad
