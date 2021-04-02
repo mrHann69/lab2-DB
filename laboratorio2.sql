@@ -1,6 +1,6 @@
 /*
  * Laboratorio 2 - Punto 2.1
- * Grupo: Aura Pasmin, Matheo Chupa pijas, Ramírez Santiago
+ * Grupo: Aura Pasmin, Franco L. Matheo, Ramírez Santiago
  * Fecha: 22 de Marzo de 2021
  * Agregar if DataBase then delete
 */
