@@ -1,6 +1,6 @@
 /*
  * Laboratorio 2 - Punto 2.1
- * Grupo: Aura Pasmin, Franco L. Matheo, Ramírez Santiago
+ * Grupo: Aura Pasmin 1825680, Franco L. Matheo 1830665, Ramírez Santiago 1841391
  * Fecha: 22 de Marzo de 2021
  * Agregar if DataBase then delete
 */
@@ -208,4 +208,41 @@ insert into evaluadores_proyecto values ('2Ma5', '4Ev011'),
                                         ('jBc300', '00Nc6'),
                                         ('EE1o8', 'r93Kz2'),
                                         ('EE1o8', 'Xo5p55');
+
+
+
+-- Primer punto
+--  Obtener el nombre de todas las facultades con su respectivo director o decano, su email y
+-- teléfono de contacto. Recuerde que el decano es un profesor de la facultad.
+select f.nombre, p.nombre, p.email, p.telefono from facultad f, profesor p
+where f.profesor_id=p.profesor_id;
+
+-- Segundo punto
+-- Obtener el nombre, fecha de inicio y fecha de finalización de los proyectos en que ha participado
+--el profesor cuya identificación es '93123775'.
+select nombre, fecha_inicio, fecha_fin from profesores_proyecto pp, proyecto p
+where profesor_id='93123775' and pp.proyecto_id = p.proyecto_id;
+
+-- Tercer punto
+--Obtener el nombre de los proyectos cuyo presupuesto es mayor a $50.000.000 y que pertenecen
+--a la facultad cuyo código es 'Ing-001' Se debe mostrar también el nombre de la facultad.
+select p.nombre, f.nombre from proyecto p, facultad f
+where p.presupuesto > 50000000 and p.facultad_id = 'Ing-001' and p.facultad_id=f.codigo_facultad;
+
+-- Cuarto punto
+--Obtener el nombre, presupuesto y nombre de la facultad a la que pertenecen los proyectos
+--que ha revisado el evaluador cuya identificación es '98212123';
+select p.nombre, p.presupuesto, f.nombre from evaluadores_proyecto ep, proyecto p, facultad f
+where ep.evaluador_id = '98212123' and
+      p.facultad_id = f.codigo_facultad and
+      ep.proyecto_id = p.proyecto_id;
+
+-- Quinto punto
+--Obtener el nombre de los profesores que pertenecen a la facultad 'cie-001' y que han presentado
+--proyectos que hayan iniciado entre el año 2007 y el 2010
+select pr.nombre from profesores_proyecto pp, profesor pr, proyecto p
+where pr.facultad_id = 'cie-001' and
+      p.fecha_inicio between '2007-01-01' and '2010-12-31' and
+      pp.profesor_id = pr.profesor_id and
+      pp.proyecto_id = p.proyecto_id;
 
