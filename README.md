@@ -29,15 +29,13 @@
 
 
 
-<<<<<<< HEAD
+
 ### PUNTO 2
-=======
-## PUNTO 2
->>>>>>> 09f4574634548d45cb9a7622b2fd7d8ca884055d
+
 ![punto2](imgs/punto2.png)
 
 
-* 2.1 CREACION DE LA BASE DE DATOS
+####2.1 CREACION DE LA BASE DE DATOS
 ```
 laboratorio2.sql
 
@@ -127,7 +125,7 @@ alter table profesor
 alter table proyecto
     add constraint proyecto_pk primary key (proyecto_id);
 -- Primary key of evaluador
-alter table evaluador
+alter table evaluad## PUNTO 2or
     add constraint evaluador_pk primary key (evaluador_id);
 
 -- Foreign key of facultad
@@ -136,7 +134,7 @@ alter table facultad
 
 -- Foreign key of profesor
 alter table profesor
-    add constraint profesor_fk foreign key (facultad_id) references facultad(codigo_facultad);
+    add constraint ## PUNTO 2profesor_fk foreign key (facultad_id) references facultad(codigo_facultad);
 
 -- Foreign key of proyecto
 alter table proyecto
@@ -154,7 +152,7 @@ alter table evaluadores_proyecto
 
  ```
 
-* 2.2 Escriba las instrucciones SQL necesarias para insertar la siguiente información.
+### 2.2 Escriba las instrucciones SQL necesarias para insertar la siguiente información.
 
   * 2.2.1 Insertar 3 registros en la tabla profesor, cada profesor debe pertenecer a una facultad diferente.
 ```
@@ -201,4 +199,37 @@ alter table evaluadores_proyecto
   ('jBc300', '00Nc6'),
   ('EE1o8', 'r93Kz2'),
   ('EE1o8', 'Xo5p55');
+```
+### 2.3 Escriba en SQL las siguientes consultas, las cuales deben adicionarse alarchivo SQL.
+
+a. Obtener el nombre de todas las facultades con su respectivo director o decano, su email y teléfono de contacto. Recuerde que el decano es un profesor de la facultad.
+```
+select f.nombre, p.nombre, p.email, p.telefono from facultad f, profesor p
+where f.profesor_id=p.profesor_id;
+```
+
+b. Obtener el nombre, fecha de inicio y fecha de finalización de los proyectos en que ha participadoel profesor cuya identificación es ‘93123775’.
+```
+select nombre, fecha_inicio, fecha_fin from profesores_proyecto pp, proyecto p
+where profesor_id='93123775' and pp.proyecto_id = p.proyecto_id;
+```
+c. Obtener el nombre de los proyectos cuyo presupuesto es mayor a $50.000.000 y que pertenecena la facultad cuyo código es ‘Ing-001’ Se debe mostrar también el nombre de la facultad.
+```
+select p.nombre, f.nombre from proyecto p, facultad f
+where p.presupuesto > 50000000 and p.facultad_id = 'Ing-001' and p.facultad_id=f.codigo_facultad;
+```
+d. Obtener el nombre, presupuesto y nombre de la facultad a la que pertenecen los proyectos que ha revisado el evaluador cuya identificación es ‘98212123’;
+```
+select p.nombre, p.presupuesto, f.nombre from evaluadores_proyecto ep, proyecto p, facultad f
+where ep.evaluador_id = '98212123' and
+      p.facultad_id = f.codigo_facultad and
+      ep.proyecto_id = p.proyecto_id;
+```
+e. Obtener el nombre de los profesores que pertenecen a la facultad ‘cie-001’ y que han presentado proyectos que hayan iniciado entre el año 2007 y el 2010.
+```
+select pr.nombre from profesores_proyecto pp, profesor pr, proyecto p
+where pr.facultad_id = 'cie-001' and
+      p.fecha_inicio between '2007-01-01' and '2010-12-31' and
+      pp.profesor_id = pr.profesor_id and
+      pp.proyecto_id = p.proyecto_id;
 ```
