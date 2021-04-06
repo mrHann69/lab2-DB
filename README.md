@@ -34,7 +34,7 @@
 ![punto2](imgs/punto2.png)
 
 
-####2.1 CREACION DE LA BASE DE DATOS
+### 2.1 CREACION DE LA BASE DE DATOS
 ```
 laboratorio2.sql
 
