@@ -2,7 +2,11 @@
 * Description
 *this is a practical laboratory from the  Databases course*
 
+<<<<<<< HEAD
 ### PUNTO 1
+=======
+## PUNTO 1
+>>>>>>> 09f4574634548d45cb9a7622b2fd7d8ca884055d
 
 * Dadas las relaciones X, Y y Z, completar la tabla 1. Partiendo de la operación del algebra relacional que se muestra la primera columna, escriba una instrucciónSQL adecuada para cada operación. En la última columna escriba el resultado que se obtiene al aplicar dicha consulta. Escriba este resultado lo más claramente posible, use tablas si es necesario.\
 ![punto1-tablas](imgs/tablasp1.jpeg)
@@ -25,7 +29,11 @@
 
 
 
+<<<<<<< HEAD
 ### PUNTO 2
+=======
+## PUNTO 2
+>>>>>>> 09f4574634548d45cb9a7622b2fd7d8ca884055d
 ![punto2](imgs/punto2.png)
 
 
