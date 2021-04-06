@@ -1,6 +1,6 @@
 # LABORATORIO PRACTICO 2
 * Description
-*this is a practical laboratory from the  Databases course*
+*this is a practical laboratory from the  Databases course*\
 *Participantes:*
 - Aura Marina Pasmin - 1825680-2711
 - Santiago Ramirez - 1841391-2711
