@@ -2,7 +2,7 @@
 * Description
 *this is a practical laboratory from the  Databases course*
 
-##PUNTO 1 ##
+### PUNTO 1
 
 * Dadas las relaciones X, Y y Z, completar la tabla 1. Partiendo de la operación del algebra relacional que se muestra la primera columna, escriba una instrucciónSQL adecuada para cada operación. En la última columna escriba el resultado que se obtiene al aplicar dicha consulta. Escriba este resultado lo más claramente posible, use tablas si es necesario.\
 ![punto1-tablas](imgs/tablasp1.jpeg)
@@ -25,12 +25,13 @@
 
 
 
-##PUNTO 2 ##
+### PUNTO 2
 ![punto2](imgs/punto2.png)
 
 
 * 2.1 CREACION DE LA BASE DE DATOS
-``` laboratorio2.sql
+```
+laboratorio2.sql
 
 create domain name_r as varchar(50) not null;
 create domain phone_r as varchar(30) default '0';
@@ -144,3 +145,52 @@ alter table evaluadores_proyecto
     add foreign key (evaluador_id) references evaluador(evaluador_id);
 
  ```
+
+* 2.2 Escriba las instrucciones SQL necesarias para insertar la siguiente información.
+
+  * 2.2.1 Insertar 3 registros en la tabla profesor, cada profesor debe pertenecer a una facultad diferente.
+```
+  insert into profesor values ('8Mus11', 'Hanne Elise Reiter', '32 Mitchell Rd Stow', '912-778-5509', 'hanneE203@gmail.com', 'Quimica de materiales', 'A1003E'),
+                              ('330Ga', 'Matt Trace Hopper', '220 Mill Rd Chelmsford', '918-693-6828', 'mattSoci@gmail.es', 'Sociologia', 'NL10R0'),
+                              ('46oIIn', 'Pernel Keith Holland', '145 Pleasant St Ashland', '717-485-0416', 'perkeilland@gmail.com', 'Psicologia Forence', 'Y44YDX');
+```
+
+  * 2.2.2 Inserte 3 registros en la tabla proyecto.
+```
+  insert into proyecto values ('EE1o8',
+                             'ActivationNet: Representation learning to predict contact quality of interacting 3-D surfaces in engineering designs',
+                             'we introduce a machine learning algorithm to extract features from point-based',
+                             13000000, '2 años y 2 meses', '2019-01-18', '2020-03-06', 'Concluida', 'E3017G'),
+                            ('jBc300', 'Iron chelates hitch a ride on PAT1',
+                             'Iron is an essential nutrient for humans and other mammalswith numerous critical biochemical function',
+                             5710000, '1 año, 6 meses', '2021-01-23', '2022-07-12', 'Activa', 'A100BI'),
+                            ('2Ma5', 'The PDB and the Ribosome',
+                             'The PDB is a publicly accessible repository of information about the positions of atoms in biological macromolecules',
+                             7900000, '3 años', '2015-11-03', '2018-05-11', 'Concluida', 'A1003E');
+```
+   * 2.2.3 Insertar 5 registros en la tabla evaluador.
+```
+  insert into evaluador values ('4Ev011', 'Gracie Camellia Grenville', '131 Beth Ct Waveland', '228-467-1110', 'Grcamegr@gmail.com', 'PhD. Biologia',20),
+                               ('tTo092','Jin Ling Kuang', '419 S 4th St Murfreesboro', '252-396-8476', 'JLkuang@gmail.es', 'Inmunología', 11),
+                               ('00Nc6', 'Patti Amberly Rogers', '3904 Montrose Dr Chevy Chase', '301-215-9889', 'pattiAmr@gmail.com', 'Medicina Experimental', 7),
+                               ('r93Kz2', 'Hachirou Takahiro', '1380 Hoppers Blf Rutledge', '865-767-3815', 'takahiro@gmail.com', 'PhD. Ingenieria de Software', 15),
+                               ('Xo5p55', 'Milla Tércia Hinrichs', '333 Mccorrie Ln Portsmouth', '401-942-1428', 'hinrichs@gmail.com', 'Modelos Matematicos y TI',13);
+```
+
+  * 2.2.4 Insertar 5 registros en la tabla profesores_proyecto y evaluadores_proyecto.
+
+```
+  insert into profesores_proyecto values
+  ('m4nT1', 'jBc300'),
+  ('Uq980', 'jBc300'),
+  ('sMM02E', 'EE1o8'),
+  ('7Uye22', 'EE1o8'),
+  ('D43M8', '2Ma5');
+
+  insert into evaluadores_proyecto values
+  ('2Ma5', '4Ev011'),
+  ('jBc300', 'tTo092'),
+  ('jBc300', '00Nc6'),
+  ('EE1o8', 'r93Kz2'),
+  ('EE1o8', 'Xo5p55');
+```
